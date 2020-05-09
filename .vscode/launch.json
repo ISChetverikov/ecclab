@@ -5,15 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(Windows) Launch",
-            "type": "cppvsdbg",
+            "name": "GDB Launch",
+            "type": "cppdbg",
             "request": "launch",
-            "program": "ca_polar_scl_bg.exe",
+            "program": "${workspaceRoot}\\work\\ca_polar_scl_bg.exe",
             "args": ["bg_polar08_ca8_CF_k128_L8.spf"],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/work/",
+            "cwd": "${workspaceRoot}\\work",
             "environment": [],
-            "externalConsole": false
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
         }
     ]
 }
